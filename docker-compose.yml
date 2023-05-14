@@ -1,0 +1,41 @@
+version: "3"
+services:
+  database:
+    image: postgres:12.7-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - ./backup_data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  backend:
+    build:
+      context: ./backend
+    command: >
+      bash -c "python manage.py migrate
+      && python manage.py collectstatic --noinput
+      && gunicorn backend.wsgi --bind 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    volumes:
+      - media:/backend/media
+      - persistent_storage:/persistent_storage
+    depends_on:
+      - database
+  frontend:
+    build:
+      context: ./frontend
+    command: npm start
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_BACKEND_URL=http://127.0.0.1:8000
+    volumes:
+      - frontend_build:/frontend/build
+      - persistent_storage:/persistent_storage
+volumes:
+  frontend_build:
+  media:
+  persistent_storage:
