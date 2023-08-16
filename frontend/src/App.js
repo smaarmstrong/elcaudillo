@@ -10,7 +10,7 @@ function App() {
             <main className="py-3">
                 <Container>
                     <h1>Welcome</h1>
-                <Container>
+                </Container>
             </main>
             <Footer />
         </div>
