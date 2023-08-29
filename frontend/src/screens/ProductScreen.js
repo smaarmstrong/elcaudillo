@@ -27,11 +27,12 @@ function ProductScreen({ match }) {
                             <Rating value={product.rating} text ={`${product.numReviews} reviews`} color={'#f8e825'} />
                         </ListGroup.Item>
                     </ListGroup>
-                </Col>
 
-                {/* <Col md={3}> */}
-                   {/* </Col> */}
-                {/* </Col> */}
+                    <ListGroup variant="flush">
+                        <ListGroup.Item>
+                            Price: ${product.price}
+                        </ListGroup.Item>
+                </Col>
             </Row>
         </div>
     )
