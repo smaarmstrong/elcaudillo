@@ -27,3 +27,8 @@ def getRoutes(request):
 @api_view(['GET'])
 def getProducts(request):
     return Response(products)
+
+@api_view(['GET'])
+def getProduct(request, pk):
+    return Response(product)
+
