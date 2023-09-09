@@ -35,3 +35,8 @@ countInStock = models.IntegerField(null=True, blank=True, default=0)
 # auto_now_add=True: set so it reflects time and date of record creation
 createdAt = models.DateTimeField(auto_now_add=True)
 
+# _id: _ is a convention to signify a private field
+# models.AutoField: increments each time a new object is made (primary key)
+# primary_key=True: specifies that this field is the primary key for the model
+# editable=False: field cannot be edited through forms or Django admin interface
+_id = models.AutoField(primary_key=True, editable=False)
