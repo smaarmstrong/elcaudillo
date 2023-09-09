@@ -30,3 +30,8 @@ price = models.DecimalField(max_digits=7, decimal_places=2)
 # default=0: the default value for this field is 0 if no value is provided
 numReviews = models.IntegerField(null=True, blank=True, default=0)
 countInStock = models.IntegerField(null=True, blank=True, default=0)
+
+# models.DateTimeField: field type to store date and time information
+# auto_now_add=True: set so it reflects time and date of record creation
+createdAt = models.DateTimeField(auto_now_add=True)
+
