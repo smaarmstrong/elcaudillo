@@ -20,8 +20,13 @@ name = models.CharField(max_length=200, null=True, blank=True)
 brand = models.CharField(max_length=200, null=True, blank=True)
 category = models.CharField(max_length=200, null=True, blank=True)
 
-# models.DecmalField: field type to store decimal numbers
+# models.DecimalField: field type to store decimal numbers
 # max_digits=7: number of digits allowed
 # decimal_places=2: number of decimal places allowed
 rating = models.DecimalField(max_digits=7, decimal_places=2)
 price = models.DecimalField(max_digits=7, decimal_places=2)
+
+# models.IntegerField: field type to store integers
+# default=0: the default value for this field is 0 if no value is provided
+numReviews = models.IntegerField(null=True, blank=True, default=0)
+countInStock = models.IntegerField(null=True, blank=True, default=0)
