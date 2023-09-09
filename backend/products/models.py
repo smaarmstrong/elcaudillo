@@ -19,3 +19,9 @@ user = models.ForeignKey(User, on_delete=models.SET_NULL, null=False)
 name = models.CharField(max_length=200, null=True, blank=True)
 brand = models.CharField(max_length=200, null=True, blank=True)
 category = models.CharField(max_length=200, null=True, blank=True)
+
+# models.DecmalField: field type to store decimal numbers
+# max_digits=7: number of digits allowed
+# decimal_places=2: number of decimal places allowed
+rating = models.DecimalField(max_digits=7, decimal_places=2)
+price = models.DecimalField(max_digits=7, decimal_places=2)
