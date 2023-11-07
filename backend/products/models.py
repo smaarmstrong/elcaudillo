@@ -13,10 +13,12 @@ class Product(models.Model):
 user = models.ForeignKey(User, on_delete=models.SET_NULL, null=False)
 
 # models.CharField: field type from Django ORM to store medium length strings
+# models.ImageField: field type from Django ORM to store image files
 # max_length=200: maximum length of strings set to 200
 # null=True: null is permitted to be stored in the database
 # blank=True: the field is allowed to be empty
 name = models.CharField(max_length=200, null=True, blank=True)
+image = models.ImageField(null=true, blank=True)
 brand = models.CharField(max_length=200, null=True, blank=True)
 category = models.CharField(max_length=200, null=True, blank=True)
 
