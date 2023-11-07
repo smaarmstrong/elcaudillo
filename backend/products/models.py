@@ -18,7 +18,7 @@ class Product(models.Model):
     # null=True: null is permitted to be stored in the database
     # blank=True: the field is allowed to be empty
     name = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(null=true, blank=True)
+    image = models.ImageField(null=True, blank=True)
     brand = models.CharField(max_length=200, null=True, blank=True)
     category = models.CharField(max_length=200, null=True, blank=True)
     
