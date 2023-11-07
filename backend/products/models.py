@@ -10,7 +10,7 @@ class Product(models.Model):
     # User: the model reference; built-in with Django
     #on_delete=models.SET_NULL: if the user is deleted, set the field to null
     # null=FALSE: null is not allowed in the database
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=False)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     
     # models.CharField: field type from Django ORM to store medium length strings
     # models.ImageField: field type from Django ORM to store image files
