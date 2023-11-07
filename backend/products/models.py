@@ -4,7 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Product(models.Model)
+class Product(models.Model):
 
 # models.ForeignKey: field type to establish a relationship between two models
 # User: the model reference; built-in with Django
