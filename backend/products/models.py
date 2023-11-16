@@ -27,10 +27,10 @@ class Product(models.Model):
     # models.DecimalField: field type to store decimal numbers
     # max_digits=7: number of digits allowed
     # decimal_places=2: number of decimal places allowed
-    rating = models.DecimalField(max_digits=7, decimal_places=2)
-    price = models.DecimalField(max_digits=7, decimal_places=2)
+    rating = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+    price = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
     
-    # models.IntegerField: field type to store integers
+    # models.IntegerField: field type to store integes
     # default=0: the default value for this field is 0 if no value is provided
     numReviews = models.IntegerField(null=True, blank=True, default=0)
     countInStock = models.IntegerField(null=True, blank=True, default=0)
