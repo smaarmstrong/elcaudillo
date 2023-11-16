@@ -14,6 +14,7 @@ class Product(models.Model):
     
     # models.CharField: field type from Django ORM to store medium length strings
     # models.ImageField: field type from Django ORM to store image files
+    # models.TextField: field type from Django ORM to store large length strings
     # max_length=200: maximum length of strings set to 200
     # null=True: null is permitted to be stored in the database
     # blank=True: the field is allowed to be empty
@@ -21,6 +22,7 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     brand = models.CharField(max_length=200, null=True, blank=True)
     category = models.CharField(max_length=200, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
     
     # models.DecimalField: field type to store decimal numbers
     # max_digits=7: number of digits allowed
